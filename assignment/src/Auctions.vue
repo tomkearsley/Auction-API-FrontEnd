@@ -3,7 +3,7 @@
     <div v-if="errorFlag" style="color: red;">
       {{ error }}
     </div>
-    <div id="users">
+    <div id="auctions">
       <table>
         <tr v-for="auction in auctions">
           <td>{{ auction.title }}</td>

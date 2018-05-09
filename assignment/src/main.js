@@ -3,6 +3,8 @@ import Vue from 'vue';
 import App from './App.vue';
 import Home from './Home.vue';
 import Auctions from './Auctions.vue';
+import Auction from './Auction.vue';
+import Login from './Login'
 
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
@@ -24,6 +26,16 @@ const routes = [
     path: "/auctions",
     component: Auctions
 
+  },
+  {
+    path: "/auctions/:auctionId",
+    name: "auction",
+    component: Auction
+  },
+  {
+    path:"/users/login",
+    name:"login",
+    component:Login
   }
 ];
 

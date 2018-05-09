@@ -12,7 +12,7 @@
           <tr v-for="auction in auctions">
             <div v-if= "Date.now() < auction.endDateTime">
             <td>{{ auction.title }}</td>
-            <td><!--- view link here --></td>
+            <td><router-link :to="{name: 'auction', params: {auctionId: auction.id}}">View</router-link></td>
             </div>
           </tr>
         </table>

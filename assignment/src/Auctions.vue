@@ -5,6 +5,13 @@
     </div>
     <div id="auction-search">
       <input v-model="searchText" placeholder="Search Auction Name">
+      <select v-model="auctionId">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
       <button v-on:click="getAuctions()">Search</button>
     </div>
       <div id="auctions">
@@ -27,7 +34,8 @@
           error: "",
           errorFlag: false,
           auctions: [],
-          searchText: ""
+          searchText: "",
+          auctionId:""
         }
       },
       mounted: function () {

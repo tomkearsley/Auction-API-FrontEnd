@@ -6,6 +6,8 @@ import Auctions from './Auctions.vue';
 import Auction from './Auction.vue';
 import Login from './Login'
 
+import SignUp from './SignUp';
+
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
@@ -36,6 +38,11 @@ const routes = [
     path:"/users/login",
     name:"login",
     component:Login
+  },
+  {
+    path:"/users",
+    name:"sign-up",
+    component:SignUp
   }
 ];
 

@@ -3,6 +3,7 @@
     <router-view></router-view>
     <div id="login">
       <router-link :to="{ name: 'login' }">Login</router-link>
+      <router-link :to="{ name: 'sign-up' }">Sign Up</router-link>
     </div>
   </div>
 </template>

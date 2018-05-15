@@ -22,6 +22,8 @@ Vue.use(BootstrapVue);
 
 Vue.http.options.emulateJSON = true;
 
+
+
 const routes = [
   {
     path: "/",
@@ -58,5 +60,8 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router:router,
+  data:{
+    _authorized:false
+  },
   render: h => h(App)
 });

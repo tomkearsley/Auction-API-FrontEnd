@@ -37,20 +37,19 @@
 
       },
       methods: {
+
         validateLogin: function(){
           this.$http.post('http://localhost:4941/api/v1/users/login',this.user)
             .then(function (response) {
               this.result = response.data;
               localStorage.setItem('token',this.result.token);
               localStorage.setItem('user_id',this.result.id);
-              console.log(localStorage);
+              data._authorized = true;
             }, function (error) {
               this.error = error;
               this.errorFlag = true;
             });
-
-
-    }
+        }
 
     }
 

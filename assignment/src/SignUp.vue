@@ -45,7 +45,6 @@
     },
     methods: {
       createUser: function(){
-        console.log(this.user);
 
         this.$http.post('http://localhost:4941/api/v1/users',this.user)
           .then(function (response) {

@@ -1,5 +1,7 @@
-
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Vue from 'vue';
+import BootstrapVue from 'bootstrap-vue';
 import App from './App.vue';
 import Home from './Home.vue';
 import Auctions from './Auctions.vue';
@@ -15,6 +17,7 @@ Vue.use(VueRouter);
 
 import VueResource from 'vue-resource';
 Vue.use(VueResource);
+Vue.use(BootstrapVue);
 
 
 Vue.http.options.emulateJSON = true;

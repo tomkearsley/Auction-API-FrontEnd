@@ -35,6 +35,14 @@
           password:''
 
         },
+        userLogin:{
+          username:'',
+          password:''
+        },
+        result:{
+          token:'',
+          id:''
+        },
         error: "",
         errorFlag: false,
         userId:""
@@ -53,6 +61,21 @@
               this.error = error;
               this.errorFlag = true;
             });
+        userLogin.username = user.username;
+        userLogin.password = user.password;
+        this.$http.post('http://localhost:4941/api/v1/users/login',this.userLogin)
+          .then(function (response) {
+            this.result = response.data;
+            localStorage.setItem('token',this.result.token);
+            localStorage.setItem('user_id',this.result.id);
+            this.$router.push('/');
+          }, function (error) {
+            this.error = error;
+            this.errorFlag = true;
+          });
+
+
+
       }
     }
   }

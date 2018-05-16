@@ -13,12 +13,11 @@
       <div id="auctions">
         <table>
           <tr v-for="auction in auctions">
-            <div v-if= "Date.now() < auction.endDateTime">
             <td>{{ auction.title }}</td>
-              <img v-bind:src="'http://localhost:4941/api/v1/auctions/' + auction.id + '/photos' ">
+              <img v-bind:src="'http://localhost:4941/api/v1/auctions/' + auction.id + '/photos' "
+                   style="height:100%; width:50%;margin: auto" alt="no project image">
               <!--onerror="this.src='https://www.beddingwarehouse.com.au/wp-content/uploads/2016/01/placeholder-featured-image-600x600.png'"> -->
             <td><router-link :to="{name: 'auction', params: {auctionId: auction.id}}">View</router-link></td>
-            </div>
           </tr>
         </table>
       </div>

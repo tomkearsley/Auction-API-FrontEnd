@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <div v-if="loggedIn">
-
+    <div v-if="loggedIn" id="logout">
+      <input type="button" value="My Account">
+      <input type="button" v-on:click="logOut()"  value="Log Out">
     </div>
     <div v-else id="login">
       <router-link :to="{ name: 'login' }">Login</router-link>
@@ -33,6 +34,23 @@
 
           this.loggedIn = true;
         }
+      },
+      logOut: function(){
+        console.log(localStorage.getItem('token'));
+        let request = {
+          headers: {
+            'X-Authorization': localStorage.getItem('token')
+          }
+        };
+        this.$http.post('http://localhost:4941/api/v1/users/logout',{},request)
+          .then(function (response) {
+            localStorage.clear();
+
+          }, function(error){
+              this.error = error;
+              this.errorFlag = true;
+            });
+
       }
 
     }
@@ -67,11 +85,14 @@
     color: #42b983;
   }
 
-  table, th, td {
-    border: 1px solid black;
-  }
+
 
   #login{
+    position:absolute;
+    top: 5px;
+    right: 20px;
+  }
+  #logout{
     position:absolute;
     top: 5px;
     right: 20px;

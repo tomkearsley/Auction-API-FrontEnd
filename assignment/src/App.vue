@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <div id="login">
+    <div v-if="loggedIn">
+
+    </div>
+    <div v-else id="login">
       <router-link :to="{ name: 'login' }">Login</router-link>
       <router-link :to="{ name: 'sign-up' }">Sign Up</router-link>
     </div>
@@ -17,13 +20,20 @@
         error: "",
         errorFlag: false,
         auctions: [],
-        searchText: ""
+        searchText: "",
+        loggedIn: false
       }
     },
     mounted: function () {
-
+      this.isLoggedIn();
     },
     methods: {
+      isLoggedIn: function(){
+        if(localStorage.getItem('token')){
+
+          this.loggedIn = true;
+        }
+      }
 
     }
   }

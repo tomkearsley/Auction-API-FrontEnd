@@ -5,8 +5,9 @@
     </div>
     <div id="auction-search">
       <input v-model="searchText" placeholder="Search Auction Name">
-      <select>
-        <option v-for="category in categories">{{category.categoryTitle}}</option>
+      <select id="category-list">
+        <option value="" selected disabled hidden>Pick a Category</option>
+        <option v-for="category in categories" :value="category.categoryId">{{category.categoryTitle}}</option>
       </select>
       <button v-on:click="getAuctions()">Search</button>
     </div>
@@ -43,8 +44,12 @@
       },
       methods: {
         getAuctions: function () {
-
-          this.$http.get('http://localhost:4941/api/v1/auctions',{params: {q:this.searchText}})
+          let category = document.getElementById("category-list").value;
+          let params = {
+            q: this.searchText
+          }
+          params['category-id'] = category;
+          this.$http.get('http://localhost:4941/api/v1/auctions',{params})
 
             .then(function (response) {
               this.auctions = response.data;

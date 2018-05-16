@@ -64,8 +64,16 @@
           this.error = "not logged in!";
           this.errorFlag=true;
         }
+        let request = {
+          params:{
+            amount:this.bidAmount
+          },
+          headers: {
+            'X-Authorization': localStorage.getItem('token')
+          }
+        };
         console.log(localStorage.getItem('token'));
-          this.$http.post(`http://localhost:4941/api/v1/auctions/${this.auctionId}/bids`, {params: {amount:this.bidAmount},headers: {'X-Authorization': localStorage.getItem('token')}})
+          this.$http.post(`http://localhost:4941/api/v1/auctions/${this.auctionId}/bids`, {},request)
             .then(function (response) {
           },function(error){
             this.error = error.bodyText;

@@ -2,7 +2,9 @@
   <div id="app">
     <router-view></router-view>
     <div v-if="loggedIn" id="logout">
-      <input type="button" value="My Account">
+      <router-link :to="{name: 'account', params: {userId: userId}}">
+        <input type="button" value="My Account">
+      </router-link>
       <input type="button" v-on:click="logOut()"  value="Log Out">
     </div>
     <div v-else id="login">
@@ -22,7 +24,8 @@
         errorFlag: false,
         auctions: [],
         searchText: "",
-        loggedIn: false
+        loggedIn: false,
+        userId:""
       }
     },
     mounted: function () {
@@ -33,6 +36,7 @@
         if(localStorage.getItem('token')){
 
           this.loggedIn = true;
+          this.userId = localStorage.getItem('user_id');
         }
       },
       logOut: function(){
@@ -47,9 +51,9 @@
             localStorage.clear();
 
           }, function(error){
-              this.error = error;
-              this.errorFlag = true;
-            });
+            this.error = error;
+            this.errorFlag = true;
+          });
 
       }
 

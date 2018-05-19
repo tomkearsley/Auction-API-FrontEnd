@@ -47,7 +47,7 @@
           let category = document.getElementById("category-list").value;
           let params = {
             q: this.searchText
-          }
+          };
           params['category-id'] = category;
           this.$http.get('http://localhost:4941/api/v1/auctions',{params})
 

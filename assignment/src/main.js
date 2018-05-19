@@ -7,6 +7,8 @@ import Home from './Home.vue';
 import Auctions from './Auctions.vue';
 import Auction from './Auction.vue';
 import Login from './Login'
+import Account from './Account';
+
 
 import SignUp from './SignUp';
 
@@ -48,6 +50,11 @@ const routes = [
     path:"/users",
     name:"sign-up",
     component:SignUp
+  },
+  {
+    path:"/users/:userId",
+    name:"account",
+    component:Account
   }
 ];
 

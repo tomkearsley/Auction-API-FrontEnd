@@ -19,8 +19,9 @@
     <router-link :to="{ name: 'buying' }">
       <input type="button" value="Buying">
     </router-link>
-
-    <input type="button" value="Selling">
+    <router-link :to="{ name: 'selling' }">
+      <input type="button" value="Selling">
+    </router-link>
   </div>
 </template>
 

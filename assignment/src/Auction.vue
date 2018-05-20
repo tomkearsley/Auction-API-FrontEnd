@@ -74,6 +74,7 @@
         };
           this.$http.post(`http://localhost:4941/api/v1/auctions/${this.auctionId}/bids`, {},request)
             .then(function (response) {
+              location.reload();
           },function(error){
             this.error = error.bodyText;
             this.errorFlag = true;

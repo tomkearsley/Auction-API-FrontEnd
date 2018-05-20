@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdba418c-a090-4d44-a8d2-836cf95de296" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/assignment/src/CreateAuction.vue" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/assignment/src/Account.vue" afterPath="$PROJECT_DIR$/assignment/src/Account.vue" />
-      <change beforePath="$PROJECT_DIR$/assignment/src/Auction.vue" afterPath="$PROJECT_DIR$/assignment/src/Auction.vue" />
-      <change beforePath="$PROJECT_DIR$/assignment/src/Selling.vue" afterPath="$PROJECT_DIR$/assignment/src/Selling.vue" />
+      <change beforePath="$PROJECT_DIR$/assignment/src/main.js" afterPath="$PROJECT_DIR$/assignment/src/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,8 +25,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignment/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-255">
-              <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+            <state relative-caret-position="-52">
+              <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -52,21 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Home.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignment/src/Home.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="9" lean-forward="false" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Auctions.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignment/src/Auctions.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="22" selection-end-column="16" />
+            <state relative-caret-position="900">
+              <caret line="60" column="8" lean-forward="false" selection-start-line="60" selection-start-column="8" selection-end-line="68" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#tr#0;n#table#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -75,11 +65,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CreateAuction.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assignment/src/CreateAuction.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="36" lean-forward="true" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignUp.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignment/src/SignUp.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Account.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignment/src/Account.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+            <state relative-caret-position="561">
+              <caret line="66" column="154" lean-forward="false" selection-start-line="66" selection-start-column="95" selection-end-line="66" selection-end-column="154" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
               </folding>
@@ -87,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Auction.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Auction.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignment/src/Auction.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+            <state relative-caret-position="-315">
+              <caret line="9" column="51" lean-forward="true" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -142,12 +152,13 @@
         <option value="$PROJECT_DIR$/assignment/src/App.vue" />
         <option value="$PROJECT_DIR$/assignment/src/Home.vue" />
         <option value="$PROJECT_DIR$/assignment/src/Login.vue" />
-        <option value="$PROJECT_DIR$/assignment/src/main.js" />
         <option value="$PROJECT_DIR$/assignment/src/Auctions.vue" />
         <option value="$PROJECT_DIR$/assignment/src/Buying.vue" />
-        <option value="$PROJECT_DIR$/assignment/src/Account.vue" />
         <option value="$PROJECT_DIR$/assignment/src/Selling.vue" />
         <option value="$PROJECT_DIR$/assignment/src/Auction.vue" />
+        <option value="$PROJECT_DIR$/assignment/src/Account.vue" />
+        <option value="$PROJECT_DIR$/assignment/src/main.js" />
+        <option value="$PROJECT_DIR$/assignment/src/CreateAuction.vue" />
       </list>
     </option>
   </component>
@@ -261,7 +272,7 @@
       <workItem from="1526695631126" duration="1754000" />
       <workItem from="1526783907593" duration="68000" />
       <workItem from="1526784810568" duration="6377000" />
-      <workItem from="1526800411578" duration="2810000" />
+      <workItem from="1526800411578" duration="5831000" />
     </task>
     <task id="LOCAL-00001" summary="GET /auctions working.">
       <created>1525857460644</created>
@@ -347,11 +358,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526791077515</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added Selling Page.&#10;&#10;&#10;TO DO:&#10;Need to organize auctions by status.">
+      <created>1526804035294</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1526804035294</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65972000" />
+    <option name="totallyTimeSpent" value="68993000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="55" width="1922" height="1080" extended-state="6" />
@@ -419,7 +437,8 @@
     <MESSAGE value="Categories is now properly searching." />
     <MESSAGE value="Fixed Login. My Account Page now displaying user details." />
     <MESSAGE value="Added Buying page for User and allowing users to edit their family Name and given Name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Buying page for User and allowing users to edit their family Name and given Name" />
+    <MESSAGE value="Added Selling Page.&#10;&#10;&#10;TO DO:&#10;Need to organize auctions by status." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Selling Page.&#10;&#10;&#10;TO DO:&#10;Need to organize auctions by status." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -428,13 +447,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignment/src/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -768,14 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignment/src/SignUp.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="43" lean-forward="true" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignment/src/Home.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -789,43 +793,6 @@
         <state relative-caret-position="150">
           <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="62" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment/src/Login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment/src/Auctions.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="22" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#tr#0;n#table#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment/src/Account.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -850,10 +817,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assignment/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment/src/Auctions.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="8" lean-forward="false" selection-start-line="60" selection-start-column="8" selection-end-line="68" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#tr#0;n#table#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment/src/Login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment/src/Account.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="66" column="154" lean-forward="false" selection-start-line="66" selection-start-column="95" selection-end-line="66" selection-end-column="154" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assignment/src/Auction.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="-315">
+          <caret line="9" column="51" lean-forward="true" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment/src/SignUp.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment/src/CreateAuction.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="36" lean-forward="true" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
           <folding />
         </state>
       </provider>

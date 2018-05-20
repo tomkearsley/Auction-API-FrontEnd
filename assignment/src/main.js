@@ -10,7 +10,7 @@ import Login from './Login'
 import Account from './Account';
 import Buying from './Buying';
 import Selling from './Selling';
-
+import CreateAuction from './CreateAuction';
 
 import SignUp from './SignUp';
 
@@ -67,6 +67,11 @@ const routes = [
     path:"/users/:userId/selling",
     name:"selling",
     component:Selling
+  },
+  {
+    path:"/auctions",
+    name:"createAuction",
+    component:CreateAuction
   }
 ];
 

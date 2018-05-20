@@ -22,6 +22,9 @@
     <router-link :to="{ name: 'selling' }">
       <input type="button" value="Selling">
     </router-link>
+    <router-link :to="{ name: 'createAuction' }">
+      <input type="button" value="Create New Auction">
+    </router-link>
   </div>
 </template>
 

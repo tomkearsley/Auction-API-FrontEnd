@@ -66,9 +66,6 @@
               this.error = error;
               this.errorFlag = true;
             });
-        },
-        getPhoto: function(){
-          this.$http.get('http://localhost:4941/api/v1/')
         }
       }
     }

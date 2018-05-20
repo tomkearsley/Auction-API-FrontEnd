@@ -40,7 +40,6 @@
         }
       },
       logOut: function(){
-        console.log(localStorage.getItem('token'));
         let request = {
           headers: {
             'X-Authorization': localStorage.getItem('token')
@@ -49,6 +48,7 @@
         this.$http.post('http://localhost:4941/api/v1/users/logout',{},request)
           .then(function (response) {
             localStorage.clear();
+            location.reload();
 
           }, function(error){
             this.error = error;

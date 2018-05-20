@@ -44,6 +44,7 @@
               this.result = response.data;
               localStorage.setItem('token',this.result.token);
               localStorage.setItem('user_id',this.result.id);
+              location.reload();
               this.$router.push('/');
             }, function (error) {
               this.error = error;

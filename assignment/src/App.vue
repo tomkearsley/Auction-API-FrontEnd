@@ -45,10 +45,11 @@
             'X-Authorization': localStorage.getItem('token')
           }
         };
+        localStorage.clear();
         this.$http.post('http://localhost:4941/api/v1/users/logout',{},request)
           .then(function (response) {
-            localStorage.clear();
             location.reload();
+            this.$router.push('/');
 
           }, function(error){
             this.error = error;

@@ -39,6 +39,7 @@
       methods: {
 
         validateLogin: function(){
+          console.log(this.user);
           this.$http.post('http://localhost:4941/api/v1/users/login',this.user)
             .then(function (response) {
               this.result = response.data;

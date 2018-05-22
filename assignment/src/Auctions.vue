@@ -9,6 +9,14 @@
         <option value="" selected disabled hidden>Pick a Category</option>
         <option v-for="category in categories" :value="category.categoryId">{{category.categoryTitle}}</option>
       </select>
+      <select id="auction-status">
+        <option value="" selected disabled hidden>Auction Status</option>
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="expired">Expired</option>
+        <option value="won">Won</option>
+        <option value="upcoming">Upcoming</option>
+      </select>
       <button v-on:click="getAuctions()">Search</button>
     </div>
       <div id="auctions">
@@ -45,10 +53,12 @@
       methods: {
         getAuctions: function () {
           let category = document.getElementById("category-list").value;
+          let status = document.getElementById("auction-status").value;
           let params = {
             q: this.searchText
           };
           params['category-id'] = category;
+          params['status'] = status;
           this.$http.get('http://localhost:4941/api/v1/auctions',{params})
 
             .then(function (response) {

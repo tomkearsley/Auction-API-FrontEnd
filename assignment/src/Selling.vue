@@ -46,7 +46,8 @@
     methods:{
       getSellingAuctions: function () {
         let params = {
-          seller: this.userId
+          seller: this.userId,
+          status:'active'
         };
         this.$http.get('http://localhost:4941/api/v1/auctions',{params})
 

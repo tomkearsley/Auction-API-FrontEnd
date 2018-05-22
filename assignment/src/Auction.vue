@@ -3,10 +3,13 @@
   <div v-if="errorFlag" style="color: red;">
     {{ error }}
   </div>
+  <div v-if="isOwner">
+  </div>
   <div id="auction">
           Title: {{auction.title}} <br>
           Seller: {{auction.seller.username}}  <br>
           Starting Time: {{formatDate(auction.startDateTime)}} <br>
+          Ending Time: {{formatDate(auction.endDateTime)}}<br>
           Description: {{auction.description}} <br>
           Current Bid: {{auction.currentBid}}
           <table style="width:100%">
@@ -36,6 +39,8 @@
       return {
         error: "",
         errorFlag: false,
+        isOwner:false,
+        modalShow:false,
         auctionId: this.$route.params.auctionId,
         searchText: "",
         auction: [],
@@ -51,13 +56,18 @@
         this.$http.get(`http://localhost:4941/api/v1/auctions/${this.auctionId}`)
           .then(function (response) {
             this.auction = response.data;
+            if(parseInt(localStorage.getItem("user_id")) === parseInt(this.auction.seller.id)){
+              this.isOwner = true;
+            }
           }, function (error) {
             this.error = error;
             this.errorFlag = true;
           });
       },
       formatDate: function(date){
-        return Date(date);
+        let result = new Date(date);
+
+        return result.toUTCString();
       },
       placeBid: function(){
         if (! localStorage.getItem('token')) {

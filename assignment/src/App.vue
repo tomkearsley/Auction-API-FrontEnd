@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div v-if="errorFlag" style="color: red;">
+      {{ error.body }}
+    </div>
     <div id="navbar">
       <div v-if="loggedIn" id="logout">
         <ul>

@@ -34,24 +34,26 @@
                   </select>
 
                   <b-form-input type="text"
-                                v-model="auction_patch.title"
+                                v-model="auction.title"
                                 placeholder="Enter New Auction Name">
                   </b-form-input>
                   <b-form-input type="text"
-                                v-model="auction_patch.description"
+                                v-model="auction.description"
                                 placeholder="Enter New Auction Description">
                   </b-form-input>
+                  <b-form-file label="Image" v-model="file" :state="Boolean(file)" placeholder="Choose a photo..."></b-form-file>
+                  <div class="mt-3">Selected file: {{file && file.name}}</div>
                   <b-form-input type="datetime-local"
-                                v-model="auction_patch.startDate">
+                                v-model="auction.startDateTime">
                   </b-form-input>
                   <b-form-input type="datetime-local"
-                                v-model="auction_patch.endDate">
+                                v-model="auction.endDateTime">
                   </b-form-input>
                   <b-form-input type="number"
-                                v-model="auction_patch.reservePrice">
+                                v-model="auction.reservePrice">
                   </b-form-input>
                   <b-form-input type="number"
-                                v-model="auction_patch.startingBid">
+                                v-model="auction.startingBid">
                   </b-form-input>
                   <b-button type="submit" variant="primary">Edit </b-button>
                 </b-form>
@@ -88,7 +90,8 @@
         searchText: "",
         auction: [],
         bidAmount:"",
-        auction_patch:[]
+        auction_patch:[],
+        file:null
       }
     },
     mounted: function () {
@@ -147,19 +150,41 @@
       },
       editAuction: function(){
         let requestBody = {
-          "categoryId": parseInt(document.getElementById("category").value),
-          "title": this.auction_patch.title,
-          "description": this.auction_patch.description,
-          "startDateTime": Date.parse(this.auction_patch.startDate),
-          "endDateTime": Date.parse(this.auction_patch.endDate),
-          "reservePrice": parseInt(this.auction_patch.reservePrice),
-          "startingBid": parseInt(this.auction_patch.startingBid)
+          "categoryId": this.auction.categoryId,
+          "title": this.auction.title,
+          "description": this.auction.description,
+          "startDateTime": Date.parse(this.auction.startDateTime),
+          "endDateTime": Date.parse(this.auction.endDateTime),
+          "reservePrice": parseInt(this.auction.reservePrice),
+          "startingBid": parseInt(this.auction.startingBid)
         };
         this.$http.patch(`http://localhost:4941/api/v1/auctions/${this.auctionId}`,JSON.stringify(requestBody),{headers:{'X-Authorization':localStorage.getItem('token')}})
           .then(function (response) {
+            this.addPhoto();
             location.reload();
 
           }, function (error) {
+            this.error = error;
+            this.errorFlag = true;
+          });
+      },
+      addPhoto: function () {
+        if(this.file === null){
+          return;
+        }
+        let requestBody = this.file.type;
+        let requestConfig = {
+          emulateJSON: false,
+          headers: {
+            'Content-Type': this.file.type,
+            'X-Authorization': localStorage.getItem("token")
+          }
+        };
+        this.$http.post(`http://localhost:4941/api/v1/auctions/${this.auctionId}/photos`, requestBody, requestConfig)
+          .then(function (response) {
+            alert('photo uploaded');
+          }, function (error) {
+            alert('photo upload failed');
             this.error = error;
             this.errorFlag = true;
           });

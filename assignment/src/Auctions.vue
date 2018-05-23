@@ -19,14 +19,14 @@
       </select>
       <button v-on:click="getAuctions()">Search</button>
     </div>
-      <div id="auctions">
+      <div id="auctions" style="margin-bottom: 50px">
         <table>
           <tr v-for="auction in auctions">
-            <td>{{ auction.title }}</td>
+            <td style="font-size: medium">{{ auction.title }}</td>
               <img v-bind:src="'http://localhost:4941/api/v1/auctions/' + auction.id + '/photos' "
                    style="height:100%; width:50%;margin: auto" alt="no project image">
               <!--onerror="this.src='https://www.beddingwarehouse.com.au/wp-content/uploads/2016/01/placeholder-featured-image-600x600.png'"> -->
-            <td><router-link :to="{name: 'auction', params: {auctionId: auction.id}}">View</router-link></td>
+            <td style="font-size: medium"><router-link :to="{name: 'auction', params: {auctionId: auction.id}}">View</router-link></td>
           </tr>
         </table>
       </div>

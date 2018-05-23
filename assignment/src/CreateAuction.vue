@@ -20,23 +20,19 @@
       </b-form-input>
       <b-form-input type="datetime-local"
                     v-model="auction.startDate"
-                    required
-                    v-b-tooltip.hover title="Enter Auction Start Date">
+                    required>
       </b-form-input>
       <b-form-input type="datetime-local"
                     v-model="auction.endDate"
-                    required
-                    v-b-tooltip.hover title="Enter Auction End Date">
+                    required>
       </b-form-input>
       <b-form-input type="number"
                     v-model="auction.reservePrice"
-                    required
-                    v-b-tootltip.hover title="Enter Auction Reserve Price">
+                    required>
       </b-form-input>
       <b-form-input type="number"
                     v-model="auction.startingBid"
-                    required
-                    v-b-tooltip.hover title="Enter Auction Starting Bid">
+                    required>
       </b-form-input>
       <b-button type="submit" variant="primary">Create Auction</b-button>
     </b-form>
@@ -98,6 +94,6 @@
     }
 </script>
 
-<style scoped>
+<style>
 
 </style>

@@ -3,13 +3,12 @@
 
 <template>
   <div v-if="loggedIn">
-    Welcome {{user.givenName}}! <br>
-    <input type="button" v-on:click="goAuctions()" value="View Auctions"> <br>
+    <h1>Welcome {{user.givenName}}! </h1><br>
 
   </div>
   <div v-else>
-      Home Page
-    <input type="button" v-on:click="goAuctions()" value="View Auctions"> <br>
+    <h1>Home Page</h1>
+    <h2>Welcome, use the navbar to either login, signup or view current auctions</h2>
   </div>
 </template>
 
@@ -40,9 +39,6 @@
                 this.errorFlag = errorFlag;
               });
         }
-      },
-      goAuctions: function(){
-        this.$router.push('/auctions')
       }
     }
   }

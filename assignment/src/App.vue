@@ -6,6 +6,7 @@
     <div id="navbar">
       <div v-if="loggedIn" id="logout">
         <ul>
+          <li><a href="/">Home</a> </li>
           <li><a href="/auctions">Auctions</a></li>
           <li><router-link :to="{name: 'account', params: {userId: userId}}">My Account </router-link></li>
           <li><a v-on:click="logOut()">Logout</a></li>

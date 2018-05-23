@@ -119,7 +119,7 @@
         this.$http.get(`http://localhost:4941/api/v1/auctions/${this.auctionId}`)
           .then(function (response) {
             this.auction = response.data;
-            if(parseInt(localStorage.getItem("user_id")) === parseInt(this.auction.seller.id) && JSON.stringify(this.auction.bids) === JSON.stringify([])){
+            if(parseInt(localStorage.getItem("user_id")) === parseInt(this.auction.seller.id) && this.auction.startDateTime > Date.now()){
               this.isOwner = true;
             }
           }, function (error) {

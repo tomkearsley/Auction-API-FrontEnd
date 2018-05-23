@@ -6,7 +6,7 @@
   <div id="field">
     <form @submit.prevent="validateLogin">
     <label for="uname"><b>Username</b></label>
-    <input type="text" v-model="user.username" placeholder="Enter Username Or Email" name="uname" required>
+    <input type="text" v-model="loginRequest" placeholder="Enter Username Or Email" name="uname" required>
 
 
     <label for="psw"><b>Password</b></label>
@@ -23,7 +23,6 @@
       data() {
         return {
           user: {
-            username: '',
             password: ''
 
           },
@@ -31,7 +30,8 @@
           error: "",
           errorFlag: false,
           userId: "",
-          token: ""
+          token: "",
+          loginRequest:""
         }
       }, mounted: function () {
 
@@ -39,7 +39,8 @@
       methods: {
 
         validateLogin: function(){
-          console.log(this.user);
+          this.user['username'] = this.loginRequest;
+          this.user['email'] = this.loginRequest;
           this.$http.post('http://localhost:4941/api/v1/users/login',this.user)
             .then(function (response) {
               this.result = response.data;

@@ -20,18 +20,23 @@
       </b-form-input>
       <b-form-file label="Image" v-model="file" :state="Boolean(file)" placeholder="Choose a photo..."></b-form-file>
       <div class="mt-3">Selected file: {{file && file.name}}</div>
+      <br>
+      <label>Start Date</label>
       <b-form-input type="datetime-local"
                     v-model="auction.startDate"
                     required>
       </b-form-input>
+      <label>End Date</label>
       <b-form-input type="datetime-local"
                     v-model="auction.endDate"
                     required>
       </b-form-input>
+      <label>Reserve Price</label>
       <b-form-input type="number"
                     v-model="auction.reservePrice"
                     required>
       </b-form-input>
+      <label>Starting Bid</label>
       <b-form-input type="number"
                     v-model="auction.startingBid"
                     required>

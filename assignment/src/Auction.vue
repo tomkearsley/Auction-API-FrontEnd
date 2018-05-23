@@ -11,6 +11,7 @@
   </div>
   <div id="auction" align="left">
           <h2>
+            Starting Bid: {{auction.startingBid}}<br>
             Current Bid: {{auction.currentBid}} <br>
             Starting Time: {{formatDate(auction.startDateTime)}} <br>
             Ending Time: {{formatDate(auction.endDateTime)}}<br>
@@ -43,15 +44,20 @@
                   </b-form-input>
                   <b-form-file label="Image" v-model="file" :state="Boolean(file)" placeholder="Choose a photo..."></b-form-file>
                   <div class="mt-3">Selected file: {{file && file.name}}</div>
+                  <br>
+                  <label>Start Date</label>
                   <b-form-input type="datetime-local"
                                 v-model="auction.startDateTime">
                   </b-form-input>
+                  <label>End Date</label>
                   <b-form-input type="datetime-local"
                                 v-model="auction.endDateTime">
                   </b-form-input>
+                  <label>Reserve Price</label>
                   <b-form-input type="number"
                                 v-model="auction.reservePrice">
                   </b-form-input>
+                  <label>Starting Price</label>
                   <b-form-input type="number"
                                 v-model="auction.startingBid">
                   </b-form-input>

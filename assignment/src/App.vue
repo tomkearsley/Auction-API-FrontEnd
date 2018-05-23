@@ -45,7 +45,6 @@
             'X-Authorization': localStorage.getItem('token')
           }
         };
-        localStorage.clear();
         this.$http.post('http://localhost:4941/api/v1/users/logout',{},request)
           .then(function (response) {
             location.reload();
@@ -54,6 +53,8 @@
           }, function(error){
             this.error = error;
             this.errorFlag = true;
+            localStorage.clear();
+            location.reload();
           });
 
       }

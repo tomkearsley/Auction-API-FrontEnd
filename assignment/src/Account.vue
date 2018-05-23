@@ -8,6 +8,7 @@
       {{user.familyName}} <br>
       Registered Email: {{user.email}} <br>
       Account Balance: {{user.accountBalance}}
+
     </div>
     <form @submit.prevent="editUser">
       <h3>Edit Details</h3>

@@ -1,17 +1,46 @@
 <template>
-    <form @submit.prevent="createAuction">
+  <div>
+    <h1>Create Auction</h1>
+    <b-form @submit.prevent="createAuction">
       <select id="category">
         <option value="" selected disabled hidden>Pick a Category</option>
         <option v-for="category in categories" :value="category.categoryId">{{category.categoryTitle}}</option>
       </select>
-      Title:<input type="text" v-model="auction.title">
-      Description:<input type="text" v-model="auction.description">
-      Start Time: <input type="datetime-local" v-model="auction.startDate">
-      End Time: <input type="datetime-local" v-model="auction.endDate">
-      Reserve Price: <input type="number" v-model="auction.reservePrice">
-      Starting Bid:<input type="number" v-model="auction.startingBid">
-      <button type="submit">Create Auction</button>
-    </form>
+
+
+      <b-form-input type="text"
+                    v-model="auction.title"
+                    required
+                    placeholder="Enter Auction Name">
+      </b-form-input>
+      <b-form-input type="text"
+                    v-model="auction.description"
+                    required
+                    placeholder="Enter Auction Description">
+      </b-form-input>
+      <b-form-input type="datetime-local"
+                    v-model="auction.startDate"
+                    required
+                    v-b-tooltip.hover title="Enter Auction Start Date">
+      </b-form-input>
+      <b-form-input type="datetime-local"
+                    v-model="auction.endDate"
+                    required
+                    v-b-tooltip.hover title="Enter Auction End Date">
+      </b-form-input>
+      <b-form-input type="number"
+                    v-model="auction.reservePrice"
+                    required
+                    v-b-tootltip.hover title="Enter Auction Reserve Price">
+      </b-form-input>
+      <b-form-input type="number"
+                    v-model="auction.startingBid"
+                    required
+                    v-b-tooltip.hover title="Enter Auction Starting Bid">
+      </b-form-input>
+      <b-button type="submit" variant="primary">Create Auction</b-button>
+    </b-form>
+  </div>
 </template>
 
 <script>

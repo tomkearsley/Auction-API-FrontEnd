@@ -1,17 +1,30 @@
 <template>
-<div>
+<div style="padding-left: 10px">
   <div v-if="errorFlag" style="color: red;">
     {{ error }}
   </div>
   <div v-if="isOwner">
   </div>
-  <div id="auction">
-          Title: {{auction.title}} <br>
-          Seller: {{auction.seller.username}}  <br>
-          Starting Time: {{formatDate(auction.startDateTime)}} <br>
-          Ending Time: {{formatDate(auction.endDateTime)}}<br>
-          Description: {{auction.description}} <br>
-          Current Bid: {{auction.currentBid}}
+  <div id="image" align="left">
+      <h1>{{auction.title}} </h1>
+      <img v-bind:src="'http://localhost:4941/api/v1/auctions/' + auctionId + '/photos' ">
+
+  </div>
+  <div id="auction" align="left">
+          <h2>
+            Current Bid: {{auction.currentBid}} <br>
+            Starting Time: {{formatDate(auction.startDateTime)}} <br>
+            Ending Time: {{formatDate(auction.endDateTime)}}<br>
+          </h2>
+          <hr>
+          <form @submit.prevent="placeBid">
+            Bid <input v-model="bidAmount" type="number">
+            <b-button variant="primary" type="submit">Submit</b-button>
+          </form>
+          <h3>{{auction.description}} <br></h3>
+          <h4>Seller: {{auction.seller.username}}  <br></h4>
+          <hr>
+          <h2>Bid History</h2>
           <table style="width:100%">
             <tr>
               <th>Buyer Username</th>
@@ -24,10 +37,7 @@
               <td>{{formatDate(bid.datetime)}}</td>
             </tr>
           </table>
-          <form @submit.prevent="placeBid">
-            Bid<input v-model="bidAmount" type="number">
-            <input type="submit" value="Place Bid">
-          </form>
+
 
   </div>
 </div>
@@ -40,7 +50,6 @@
         error: "",
         errorFlag: false,
         isOwner:false,
-        modalShow:false,
         auctionId: this.$route.params.auctionId,
         searchText: "",
         auction: [],
@@ -99,5 +108,4 @@
   table, th, td {
     border: 1px solid black;
   }
-
 </style>

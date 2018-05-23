@@ -20,16 +20,20 @@
       <button v-on:click="getAuctions()">Search</button>
     </div>
       <div id="auctions" style="margin-bottom: 50px">
-        <table>
-          <tr v-for="auction in auctions">
-            <td style="font-size: medium">{{ auction.title }}</td>
+          <table>
+            <tr v-for="auction in auctions">
+              <td style="font-size: medium">{{ auction.title }}</td>
               <img v-bind:src="'http://localhost:4941/api/v1/auctions/' + auction.id + '/photos' "
                    style="height:100%; width:50%;margin: auto" alt="no project image">
               <!--onerror="this.src='https://www.beddingwarehouse.com.au/wp-content/uploads/2016/01/placeholder-featured-image-600x600.png'"> -->
-            <td style="font-size: medium"><router-link :to="{name: 'auction', params: {auctionId: auction.id}}">View</router-link></td>
-          </tr>
-        </table>
+              <td style="font-size: medium"><router-link :to="{name: 'auction', params: {auctionId: auction.id}}">View</router-link></td>
+            </tr>
+          </table>
       </div>
+    <b-button-group>
+      <b-button v-on:click="getPreviousItems()">Previous</b-button>
+      <b-button v-on:click="getNextItems()">Next</b-button>
+    </b-button-group>
     </div>
 </template>
 
@@ -43,6 +47,7 @@
           categories:[],
           searchText: "",
           auctionId:"",
+          itemIndex:0,
         }
       },
       mounted: function () {
@@ -59,6 +64,8 @@
           };
           params['category-id'] = category;
           params['status'] = status;
+          params['startIndex'] = this.itemIndex;
+          params['count'] = 5;
           this.$http.get('http://localhost:4941/api/v1/auctions',{params})
 
             .then(function (response) {
@@ -76,7 +83,18 @@
               this.error = error;
               this.errorFlag = true;
             });
+        },
+
+        getNextItems: function(){
+          this.itemIndex+=5;
+          this.getAuctions();
+
+        },
+        getPreviousItems: function(){
+          this.itemIndex-=5;
+          this.getAuctions();
         }
+
       }
     }
 </script>
